@@ -67,7 +67,7 @@ export default async function OrdersPage() {
 
   return (
     <main className="flex-1">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto p-4">
         <div className="mb-8">
           <h1 className="text-2xl md:text-3xl font-bold">My Orders</h1>
           <p className="text-muted-foreground text-sm mt-0.5">{orders.length} order{orders.length !== 1 ? "s" : ""}</p>
@@ -77,9 +77,9 @@ export default async function OrdersPage() {
           {orders.map((order) => {
             const status = STATUS_STYLES[order.status] ?? STATUS_STYLES.pending
             return (
-            <div key={order._id.toString()} className="rounded-xl border bg-card overflow-hidde p-10 pb-10! mb-10!" style={{paddingBottom: "20px", marginBottom: "20px"}}>
+            <div key={order._id.toString()} className="rounded-xl border bg-card overflow-hidde">
                 {/* Order header */}
-                <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-5! border-b bg-muted/30" style={{padding: "10px"}}>
+                <div className="flex flex-wrap items-center justify-between gap-3 p-5 border-b bg-muted/30">
                   <div className="flex items-center gap-3">
                     <Package className="h-4 w-4 text-muted-foreground shrink-0" />
                     <div>
@@ -116,7 +116,7 @@ export default async function OrdersPage() {
                 <div className="px-5 py-4 border-t bg-muted/10 flex flex-wrap gap-4 justify-between items-end">
                   {/* Shipping address */}
                   {order.shippingAddress?.street && (
-                    <div className="flex items-start gap-2 text-xs text-muted-foreground" style={{margin: "5px"}}>
+                    <div className="flex items-start gap-2 text-xs text-muted-foreground">
                       <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
                       <span>
                         {order.shippingAddress.street}, {order.shippingAddress.city},{" "}
@@ -126,7 +126,7 @@ export default async function OrdersPage() {
                   )}
 
                   {/* Payment + totals */}
-                  <div className="ml-auto text-right space-y-1 text-sm m-1.5" style={{margin: "5px"}}>
+                  <div className="ml-auto text-right space-y-1 text-sm m-1.5">
                     <div className="flex items-center justify-end gap-1.5 text-xs text-muted-foreground">
                       <CreditCard className="h-3.5 w-3.5" />
                       {PAYMENT_LABELS[order.paymentMethod] ?? order.paymentMethod}
@@ -150,7 +150,7 @@ export default async function OrdersPage() {
           })}
         </div>
 
-        <div className="mt-8!" style={{marginBottom: "10px"}}>
+        <div className="mt-8">
           <Link
             href="/categories"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"

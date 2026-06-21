@@ -111,12 +111,12 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-2">
             <Show when="signed-out">
               <SignInButton mode="modal">
-                <button className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                <button className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                   Sign In
                 </button>
               </SignInButton>
               <SignUpButton mode="modal">
-                <button className="text-sm font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-md hover:opacity-90 transition-opacity">
+                <button className="text-sm font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-md hover:opacity-90 transition-opacity cursor-pointer">
                   Sign Up
                 </button>
               </SignUpButton>
@@ -148,7 +148,7 @@ export default function Navbar() {
               <SignInButton mode="modal">
                 <button
                   onClick={() => setOpen(false)}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                 >
                   Sign In
                 </button>
@@ -156,7 +156,7 @@ export default function Navbar() {
               <SignUpButton mode="modal">
                 <button
                   onClick={() => setOpen(false)}
-                  className="text-sm font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-md hover:opacity-90 transition-opacity"
+                  className="text-sm font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-md hover:opacity-90 transition-opacity cursor-pointer"
                 >
                   Sign Up
                 </button>

@@ -14,7 +14,7 @@ import {
 import Link from "next/link"
 import {
   Minus, Plus, Trash2, ShoppingCart, ArrowLeft,
-  Tag, Package, CheckCircle, Loader2, Zap,
+  Tag, Package, CheckCircle, Loader2, Zap, LogIn,
 } from "lucide-react"
 
 function fmt(n) {
@@ -154,7 +154,26 @@ export default function CheckoutPage() {
 
   return (
     <main className="flex-1">
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto p-4">
+
+        {/* Sign-in notice banner */}
+        {isLoaded && !isSignedIn && (
+          <div className="mb-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3.5">
+            <div className="flex items-center gap-3">
+              <LogIn className="h-5 w-5 text-primary shrink-0" />
+              <div>
+                <p className="text-sm font-semibold text-foreground">Sign in to complete your order</p>
+                <p className="text-xs text-muted-foreground">You can browse and build your cart, but you'll need an account to place an order.</p>
+              </div>
+            </div>
+            <SignInButton mode="modal">
+              <button className="shrink-0 text-sm font-semibold bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:opacity-90 transition-opacity cursor-pointer">
+                Sign In
+              </button>
+            </SignInButton>
+          </div>
+        )}
+
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -382,7 +401,7 @@ export default function CheckoutPage() {
               {/* Place order button */}
               {isLoaded && !isSignedIn ? (
                 <SignInButton mode="modal">
-                  <button className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                  <button className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity cursor-pointer">
                     Sign In to Place Order
                   </button>
                 </SignInButton>

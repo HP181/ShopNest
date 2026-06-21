@@ -158,11 +158,11 @@ export default async function HomePage() {
               <Link
                 key={cat.slug}
                 href={`/categories/${cat.slug}`}
-                className="group flex flex-col items-center gap-2 p-4 rounded-xl border bg-card hover:border-primary hover:bg-primary/5 transition-all"
+                className="group flex flex-col items-center gap-2 p-1 rounded-xl border bg-card hover:border-primary hover:bg-primary/5 transition-all"
               >
                 {cat.image ? (
-                  <div className="w-10 h-10 rounded-lg overflow-hidden bg-muted shrink-0">
-                    <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
+                  <div className="w-full aspect-video rounded-lg overflow-hidden bg-muted">
+                    <Image src={cat.image} width={320} height={180} alt={cat.name} className="w-full h-full object-cover" />
                   </div>
                 ) : (
                   <span className="text-3xl group-hover:scale-110 transition-transform">
