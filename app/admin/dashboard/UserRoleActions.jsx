@@ -38,7 +38,7 @@ export function UserRoleActions({ userId, currentRole, isSelf }) {
     <div className="flex flex-col gap-3">
       {/* Role badge */}
       <div className="flex items-center gap-2">
-        <span className="text-xs text-muted-foreground">Role:</span>
+        <span className="text-xs text-primary font-medium">Role:</span>
         {optimisticRole ? (
           <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary capitalize">
             <BadgeCheck className="h-3 w-3" />
